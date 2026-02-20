@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+  background: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.screen.active {
+  display: flex;
+}
+
+/* 화면 1: 송금 화면 */
+.recipient-section {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e0e7ef 0%, #c5d1e0 100%);
+  margin: 0 auto 12px;
+}
+
+.recipient-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.recipient-label {
+  font-size: 14px;
+  color: #888;
+}
+
+.amount-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.amount-display {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.balance {
+  font-size: 14px;
+  color: #888;
+}
+
+.quick-add {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.quick-btn {
+  padding: 10px 16px;
+  border-radius: 20px;
+  border: none;
+  background: #f0f0f0;
+  color: #444;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.quick-btn:hover {
+  background: #e5e5e5;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 280px;
+  margin-bottom: 24px;
+}
+
+.key {
+  padding: 16px;
+  border-radius: 12px;
+  border: none;
+  background: #f5f5f5;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+}
+
+.key:hover {
+  background: #eee;
+}
+
+/* 화면 2: 진행 중 */
+#progress-screen {
+  padding-top: 60px;
+}
+
+.progress-circle {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 32px;
+}
+
+.progress-circle svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progress-bg {
+  fill: none;
+  stroke: #e8ecf0;
+  stroke-width: 6;
+}
+
+.progress-bar {
+  fill: none;
+  stroke: #4da6ff;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.progress-text {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.progress-subtext {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* 화면 3: 완료 */
+#complete-screen {
+  padding-top: 80px;
+}
+
+.success-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #4da6ff;
+  color: #fff;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.complete-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.complete-detail {
+  font-size: 15px;
+  color: #888;
+  margin-bottom: 48px;
+}
+
+.primary-btn {
+  width: 100%;
+  max-width: 340px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  border: none;
+  background: #4da6ff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: #3d96ef;
+}

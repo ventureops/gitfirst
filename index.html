@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Money Transfer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- 화면 1: 송금 화면 -->
+  <div id="transfer-screen" class="screen active">
+    <div class="recipient-section">
+      <div class="avatar"></div>
+      <h2 class="recipient-name">John Doe</h2>
+      <p class="recipient-label">To. John Doe</p>
+    </div>
+    <div class="amount-section">
+      <div class="amount-display">$<span id="amount-value">12.25</span></div>
+      <p class="balance">Balance: $<span id="balance-value">30.44</span></p>
+    </div>
+    <div class="quick-add">
+      <button type="button" class="quick-btn" data-add="10">+$10</button>
+      <button type="button" class="quick-btn" data-add="50">+$50</button>
+      <button type="button" class="quick-btn" data-add="100">+$100</button>
+      <button type="button" class="quick-btn" data-add="500">+$500</button>
+    </div>
+    <div class="keypad">
+      <button type="button" class="key" data-key="1">1</button>
+      <button type="button" class="key" data-key="2">2</button>
+      <button type="button" class="key" data-key="3">3</button>
+      <button type="button" class="key" data-key="4">4</button>
+      <button type="button" class="key" data-key="5">5</button>
+      <button type="button" class="key" data-key="6">6</button>
+      <button type="button" class="key" data-key="7">7</button>
+      <button type="button" class="key" data-key="8">8</button>
+      <button type="button" class="key" data-key="9">9</button>
+      <button type="button" class="key" data-key=".">.</button>
+      <button type="button" class="key" data-key="0">0</button>
+      <button type="button" class="key" data-key="back">←</button>
+    </div>
+    <button type="button" id="send-btn" class="primary-btn">Send</button>
+  </div>
+
+  <!-- 화면 2: 송금 진행 중 -->
+  <div id="progress-screen" class="screen">
+    <div class="progress-circle">
+      <svg viewBox="0 0 100 100">
+        <circle class="progress-bg" cx="50" cy="50" r="45" />
+        <circle class="progress-bar" id="progress-bar" cx="50" cy="50" r="45" />
+      </svg>
+    </div>
+    <p class="progress-text">
+      Sending $<span id="progress-amount">12.25</span>
+    </p>
+    <p class="progress-subtext">to John Doe</p>
+  </div>
+
+  <!-- 화면 3: 완료 -->
+  <div id="complete-screen" class="screen">
+    <div class="success-icon">✓</div>
+    <h1 class="complete-title">Transfer Complete</h1>
+    <p class="complete-detail">You sent $<span id="complete-amount">12.25</span> to John Doe</p>
+    <button type="button" id="done-btn" class="primary-btn">Done</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
